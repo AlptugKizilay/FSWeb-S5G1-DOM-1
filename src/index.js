@@ -39,7 +39,54 @@ const siteContent = { // BU NESNEYİ DEĞİŞTİRMEYİN
   },
 };
 
-console.log('Proje açıldı!')
-
-
 /* Kodlar Buradan aşağıya */
+console.log('Proje açıldı!')
+const headerList = document.querySelectorAll("nav a");
+console.log("headerList: " , headerList);
+/* headerList[0].textContent = siteContent.nav["nav-item-1"]; */
+/* const navArr = headerList.forEach((element,index) => {
+  element.textContent = siteContent.nav[`nav-item-${index+ 1}`];
+}) */
+[... headerList].map((element,index) => {
+  headerList[index].textContent = siteContent.nav[`nav-item-${index+ 1}`];
+  headerList[index].setAttribute("class","italic");
+})
+const headerImg= document.querySelectorAll('img');
+console.log(headerImg);
+headerImg[0].setAttribute("src","http://localhost:9000/img/logo.png");
+headerImg[1].setAttribute("src","http://localhost:9000/img/cta.png" );
+headerImg[2].setAttribute("src", siteContent.images["accent-img"]);
+
+
+const ctah1 = document.querySelectorAll('h1');
+ctah1[0].textContent = "Bu DOM Mükemmel";
+const ctaButton = document.querySelector('button');
+ctaButton.textContent = 'Başlayın';
+
+
+
+const head4 = document.querySelectorAll("h4");
+const pMain = document.querySelectorAll('p');
+head4[0].textContent = siteContent["ana-içerik"]["özellikler-h4"];
+head4[1].textContent = siteContent["ana-içerik"]["hakkımızda-h4"]
+head4[2].textContent = siteContent["ana-içerik"]["servisler-h4"];
+head4[3].textContent = siteContent["ana-içerik"]["ürünler-h4"];
+head4[4].textContent = siteContent["ana-içerik"]["vizyon-h4"];
+head4[5].textContent = siteContent.iletisim["iletişim-h4"];
+pMain[0].textContent = siteContent["ana-içerik"]["özellikler-içerik"];
+pMain[1].textContent = siteContent["ana-içerik"]["hakkımızda-içerik"];
+pMain[2].textContent = siteContent["ana-içerik"]["servisler-içeriği"];
+pMain[3].textContent = siteContent["ana-içerik"]["ürünler-içeriği"];
+pMain[4].textContent = siteContent["ana-içerik"]["vizyon-içeriği"];
+pMain[5].textContent = siteContent.iletisim.adres;
+pMain[7].textContent = siteContent.iletisim.email;
+pMain[6].textContent = siteContent.iletisim.telefon;
+
+
+const footerList = document.querySelectorAll("footer a");
+const footerArr = footerList.forEach((element,index) => {
+  element.textContent = siteContent.footer.copyright;
+  element.setAttribute("class" , "bold");
+})
+
+
